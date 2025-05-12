@@ -1,10 +1,9 @@
-"""Analysis and comparison functions."""
 import numpy as np
 import arviz as az
 
 
 def get_competence_stats(trace: az.InferenceData) -> dict:
-    """Calculate competence statistics."""
+    """Calculate competence statistics - code vastly improved by AI, initial structure by me!"""
     means = trace.posterior["competence"].mean(("chain", "draw")).values
     return {
         "means": means,
@@ -14,7 +13,7 @@ def get_competence_stats(trace: az.InferenceData) -> dict:
 
 
 def compare_consensus_methods(trace: az.InferenceData, data: np.ndarray) -> dict:
-    """Compare CCT consensus with simple majority vote."""
+    """Compare CCT consensus with simple majority vote. code improved by AI but original implementation by me!"""
     # Get CCT consensus probabilities
     cct_probs = trace.posterior["consensus"].mean(("chain", "draw")).values
    

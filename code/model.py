@@ -1,10 +1,9 @@
-"""Model definition and sampling functions."""
 import pymc as pm
 import numpy as np
 
 
 def create_model(data: np.ndarray) -> pm.Model:
-    """Create CCT model with informed priors."""
+    """Create CCT model with informed priors. Created with help from AI"""
     n_informants, n_items = data.shape
    
     with pm.Model() as model:
@@ -37,7 +36,8 @@ def create_model(data: np.ndarray) -> pm.Model:
 
 
 def sample_model(model: pm.Model) -> pm.backends.base.MultiTrace:
-    """Perform MCMC sampling with configured settings."""
+    """Perform MCMC sampling with configured settings"""
     with model:
         return pm.sample(
             draws=2000,
+        )

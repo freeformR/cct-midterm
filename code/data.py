@@ -1,4 +1,3 @@
-"""Data loading and validation functions."""
 from typing import Tuple
 import pandas as pd
 import numpy as np
@@ -10,7 +9,7 @@ def load_plant_data(file_path: str = "data/plant_knowledge.csv") -> np.ndarray:
     try:
         df = pd.read_csv(file_path)
        
-        # Remove the 'Informant' column explicitly
+        # Remove the 'Informant' column explicitly - This removal was created by AI
         if 'Informant' in df.columns:
             print("Removing 'Informant' ID column")
             df = df.drop(columns='Informant')
@@ -28,7 +27,7 @@ def load_plant_data(file_path: str = "data/plant_knowledge.csv") -> np.ndarray:
 
 
 def validate_data(data: np.ndarray) -> None:
-    """Ensure data contains only binary values."""
+    """Ensure data contains only binary values. This part was suggested by AI, implemented by me and improved by AI"""
     if not np.all(np.isin(data, [0, 1])):
         bad_rows, bad_cols = np.where(~np.isin(data, [0, 1]))
         error_locations = [(r+1, c+1) for r, c in zip(bad_rows[:5], bad_cols[:5])]  # Show first 5 errors

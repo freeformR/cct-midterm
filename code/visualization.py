@@ -1,11 +1,10 @@
-"""Visualization functions."""
 import matplotlib.pyplot as plt
 import arviz as az
 import numpy as np
 
 
 def plot_competence(trace: az.InferenceData) -> plt.Figure:
-    """Plot competence distributions."""
+    """Plot competence distributions - initial code by me, improved by AI"""
     fig, ax = plt.subplots(figsize=(10, 6))
     az.plot_posterior(trace, var_names=["competence"], ax=ax)
     ax.set_title("Informant Competence Distributions")
@@ -14,7 +13,7 @@ def plot_competence(trace: az.InferenceData) -> plt.Figure:
 
 
 def plot_consensus(trace: az.InferenceData) -> plt.Figure:
-    """Plot consensus answer probabilities."""
+    """Plot consensus answer probabilities"""
     fig, ax = plt.subplots(figsize=(10, 6))
     az.plot_posterior(trace, var_names=["consensus"], ax=ax)
     ax.set_title("Consensus Answer Probabilities")

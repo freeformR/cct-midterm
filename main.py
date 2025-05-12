@@ -1,9 +1,8 @@
-"""Main analysis pipeline for Cultural Consensus Theory model."""
 from cct import data, model, analysis, visualization
 import arviz as az
 
 def main():
-    """Execute the full CCT analysis workflow."""
+    """Execute the full CCT analysis workflow - structure suggested by AI but implemented by me and improved by AI """
     # Load and validate data
     plant_data = data.load_plant_data()
     
